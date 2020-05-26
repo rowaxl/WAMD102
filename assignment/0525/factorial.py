@@ -1,5 +1,8 @@
 def fact(number):
-  if number == 1 or number == -1 or number == 0:
+  if number == 0:
+    return 1
+
+  if number == 1 or number == -1:
     return number
   
   if number > 0:
