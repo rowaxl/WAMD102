@@ -1,3 +1,7 @@
+/**
+ * Use node factorial.js to excute
+ */
+
 const readline = require('readline');
 
 const rl = readline.createInterface({
