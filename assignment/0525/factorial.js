@@ -1,14 +1,3 @@
-/**
- * Use node factorial.js to excute
- */
-
-const readline = require('readline');
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
 const fact = (number) => {
   if (number === 1 || number === -1 || number === 0) {
     return number;
@@ -24,8 +13,13 @@ const fact = (number) => {
   return number * fact(nextNum);
 }
 
-rl.question('Enter a number for calculate factorial: ', (number) => {
-  console.log(`${number}! = ${fact(parseInt(number))}`);
+const userInput = document.getElementById('numberInput');
+userInput.addEventListener('change', (e) => {
+  const value = parseInt(e.target.value);
 
-  rl.close();
-});
+  if (!value) {
+    document.getElementById('output').innerText = '';
+  }
+
+  document.getElementById('output').innerText = `${value}! = ${fact(value)}`;
+})
