@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARR</title>
+</head>
+<body>
+  <ul id="flowers">
+    <li>Sun Flower</li>
+    <li>Roses</li>
+  </ul>
+
+  <button>Add Flower</button>
+
+  <script>
+    document.getElementsByTagName('button')[0].addEventListener('click', () => {
+      const newFlower = document.createElement('li')
+      newFlower.textContent = 'Dafodil'
+
+      document.getElementById('flowers').childNodes.forEach((e, i) => {
+        if (e.nodeName === "LI" && i > 1) {
+          document.getElementById('flowers').insertBefore(newFlower, e)
+        }
+      })
+    })
+  </script>
+</body>
+</html>
